@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d3cffffa704f479f91ad04c9a980b66b" Name="Diagram1">
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Address" Width="1.5" PointX="1.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Attribute" Width="1.5" PointX="3.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Cart" Width="1.5" PointX="0.75" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_CartDetail" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Coupon" Width="1.5" PointX="3.75" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_CouponOrder" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Customer" Width="1.5" PointX="1.5" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Employee" Width="1.5" PointX="1.5" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Image" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Import" Width="1.5" PointX="3.75" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_ImportDetail" Width="1.5" PointX="6" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Menu" Width="1.5" PointX="3.75" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Order" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_OrderDetail" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Product" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_ProductAttribute" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_ProductMenu" Width="1.5" PointX="6" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Rating" Width="1.5" PointX="9" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Role" Width="1.5" PointX="3.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_RoleService" Width="1.5" PointX="6" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_RoleServiceEmployee" Width="1.5" PointX="11.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Service" Width="1.5" PointX="3.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_Supplier" Width="1.5" PointX="1.5" PointY="39.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_UserLog" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="M03_BasicModel.M03_WishList" Width="1.5" PointX="9" PointY="12.25" IsExpanded="true" />
+        <AssociationConnector Association="M03_BasicModel.FK__M03_Order__addre__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Address_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Order_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_ProductAttribute_attribute" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Cart_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_CartDetail_Cart" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_CartDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_CouponOrder_Coupon" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_CouponOrder_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Order_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Rating_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Wishlist_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Order_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_RoleServiceEmployee_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Image_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Import_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_ImportDetail_Import" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_ImportDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Menu_Parent" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_ProductMenu_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_OrderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_OrderDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_ProductAttribute_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_ProductMenu_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Rating_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_Wishlist_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_RoleService_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_RoleService_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="M03_BasicModel.FK_RoleServiceEmployee_RoleService" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

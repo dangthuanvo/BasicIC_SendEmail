@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD395B5F-56AC-477E-8205-2259734206E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Repository</RootNamespace>
+    <AssemblyName>Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.DynamicLinq, Version=1.3.3.0, Culture=neutral, PublicKeyToken=6586a8658ac2670d, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.DynamicLinq.1.3.3\lib\net46\EntityFramework.DynamicLinq.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.3.3.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.3.3\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomeModel\ListResult.cs" />
+    <Compile Include="EF\M03_Address.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Attribute.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Basic.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M03_Basic.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Basic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Basic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>M03_Basic.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Cart.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_CartDetail.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Coupon.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_CouponOrder.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Customer.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Employee.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Image.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Import.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_ImportDetail.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Menu.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Order.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_OrderDetail.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Product.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_ProductAttribute.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_ProductMenu.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Rating.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Role.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_RoleService.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_RoleServiceEmployee.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Service.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_Supplier.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_UserLog.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\M03_WishList.cs">
+      <DependentUpon>M03_Basic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\BasicICRepository.cs" />
+    <Compile Include="Interfaces\IRepositorySql.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\Query.cs" />
+    <Compile Include="Repositories\BasicICRepository.cs" />
+    <Compile Include="Repositories\BaseRepositorySql.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="EF\M03_Basic.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>M03_Basic.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\M03_Basic.edmx.diagram">
+      <DependentUpon>M03_Basic.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c2a8b755-227b-4a23-b7cc-dea5051930e3}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EF\M03_Basic.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>M03_Basic.edmx</DependentUpon>
+      <LastGenOutput>M03_Basic.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\M03_Basic.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>M03_Basic.edmx</DependentUpon>
+      <LastGenOutput>M03_Basic.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

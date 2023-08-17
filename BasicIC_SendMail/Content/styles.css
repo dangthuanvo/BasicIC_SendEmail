@@ -1,0 +1,73 @@
+﻿/* styles.css */
+
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply styles to the horizontal menu */
+.horizontal-menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+    .horizontal-menu li {
+        margin-right: 20px; /* Adjust the spacing between menu items as needed */
+    }
+
+        .horizontal-menu li:last-child {
+            margin-right: 0; /* Remove right margin from the last item */
+        }
+
+        .horizontal-menu li a {
+            text-decoration: none;
+            color: forestgreen;
+            font-weight: bold;
+        }
+
+/* Center the content vertically and horizontally */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 0; /* Adjust as needed */
+}
+
+.form {
+    margin: 20px 0 50px 0;
+}
+
+.search-form {
+    margin: 0px 0 0px 0;
+}
+
+
+
+.list {
+    margin: 0px 0 10px 0;
+}
+
+/* Add borders to table cells */
+.table-bordered {
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+
+/* Basic styling for content area */
+.content {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
