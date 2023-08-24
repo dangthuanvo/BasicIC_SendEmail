@@ -1,7 +1,18 @@
-﻿using System;
+﻿using BasicIC_SendEmail.Models.Main;
+using System;
+using System.Collections.Generic;
 
 namespace BasicIC_SendEmail.Models.Kafka
 {
+    public class OrderDetailModel : BaseModel
+    {
+        public Guid order_id { get; set; }
+        public Guid product_id { get; set; }
+        public decimal product_price { get; set; }
+        public string product_name { get; set; }
+        public int quantity { get; set; }
+        public decimal total_price { get; set; }
+    }
     public class KafkaBaseModel
     {
         public Guid? id { get; set; }
@@ -14,9 +25,15 @@ namespace BasicIC_SendEmail.Models.Kafka
 
     public class KafkaEmailModel : KafkaBaseModel
     {
-        public string toEmail { get; set; }
+        public string order_id { get; set; }
+        public string customer_name { get; set; }
+        public string customer_phone_number { get; set; }
+        public decimal total_price { get; set; }
+        public string shipping_address { get; set; }
+        public int shipping_fee { get; set; }
+        public List<OrderDetailModel> orderDetailModel { get; set; } = new List<OrderDetailModel>();
+        public string to_email { get; set; }
         public string subject { get; set; }
-        public string body { get; set; }
 
         public KafkaEmailModel()
         {
@@ -25,24 +42,6 @@ namespace BasicIC_SendEmail.Models.Kafka
             modify_time = currentDateTime;
             //id = Guid.NewGuid();
         }
-
-        /// <summary>
-        /// Type: Implement method
-        /// Description: Method to clone object
-        /// Owner: trint
-        /// Create log:     15.11.2022 - trint     
-        /// </summary>
-        /// <returns></returns>
-        //public IPrototype Clone()
-        //{
-        //    return this.MemberwiseClone() as IPrototype;
-        //}
-        //public IPrototype DeepClone()
-        //{
-        //    var data = JsonConvert.SerializeObject(this);
-        //    var copy = JsonConvert.DeserializeObject<KafkaEmailModel>(data);
-        //    return copy;
-        //}
     }
 
     //public class ListKafkaReceiveMessageModel

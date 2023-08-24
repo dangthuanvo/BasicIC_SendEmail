@@ -24,6 +24,8 @@ namespace Common
         public static readonly string CONF_MAX_DEGREE_PARALLELISM = "MAX_DEGREE_PARALLELISM";
         public static readonly string CONF_KAFKA_BOOSTRAP_SERVER = "KAFKA_BOOSTRAP_SERVER";
         public static readonly string CONF_KAFKA_GROUP_ID = "KAFKA_GROUP_ID";
+        public static readonly string EMAIL_ADDRESS_HOST = "dangthuanvo1611@gmail.com";
+        public static readonly string EMAIL_ADDRESS_PASS = "pwuebwfhtmnujdwt";
 
         public static ModuleBuilder MODULE_BUILDER = AppDomain.CurrentDomain.DefineDynamicAssembly(new AssemblyName("Dynamic Assembly"), AssemblyBuilderAccess.Run).DefineDynamicModule("MainModule");
     }
