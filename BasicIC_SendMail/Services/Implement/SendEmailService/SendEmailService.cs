@@ -10,7 +10,6 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace BasicIC_SendEmail.Services.Implement
 {
@@ -28,8 +27,10 @@ namespace BasicIC_SendEmail.Services.Implement
                 int smtpPort = 587;
                 string smtpUsername = Constants.EMAIL_ADDRESS_HOST;
                 string smtpPassword = Constants.EMAIL_ADDRESS_PASS;
+                //string test = AppContext.BaseDirectory;
                 //string body = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("Service/Implement/SendEmailService/EmailTemplate.html"));
-                string filePath = HttpContext.Current.Server.MapPath("~/Service/Implement/SendEmailService/EmailTemplate.html");
+
+                string filePath = AppContext.BaseDirectory + "Services\\Implement\\SendEmailService\\EmailTemplate.html";
 
 
                 //Debug.WriteLine($"Reading file from path: {filePath}");
@@ -37,12 +38,17 @@ namespace BasicIC_SendEmail.Services.Implement
 
                 body = body.Replace("{{first_name}}", emailContent.customer_name);
                 body = body.Replace("{{order_id}}", emailContent.order_id);
+                body = body.Replace("{{order.shipping_address}}", emailContent.shipping_address);
+                body = body.Replace("{{order.shipping.price}}", emailContent.shipping_fee.ToString());
+                body = body.Replace("{{order.total.price}}", emailContent.total_price.ToString());
+                body = body.Replace("{{company_name}}", Constants.COMPANY_NAME);
+                body = body.Replace("{{company_address}}", Constants.COMPANY_ADDRESS);
                 string listProduct = null;
                 foreach (var productData in emailContent.orderDetailModel)
                 {
                     //string product = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("Service/Implement/SendEmailService/ProductTemplate.html"));
                     body = body.Replace("{{order.items.title}}", productData.product_name);
-                    listProduct += System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("Service/Implement/SendEmailService/EmailTemplate.html")).Replace("{{order.items.title}}", productData.product_name).Replace("{{order.items.quantity}}", productData.quantity.ToString()).Replace("{{order.items.price}}", productData.product_price.ToString());
+                    listProduct += System.IO.File.ReadAllText(AppContext.BaseDirectory + "Services\\Implement\\SendEmailService\\ProductTemplate.html").Replace("{{order.items.title}}", productData.product_name).Replace("{{order.items.quantity}}", productData.quantity.ToString()).Replace("{{order.items.price}}", productData.product_price.ToString());
                 }
                 body = body.Replace("<!--ADD PRODUCT HERE-->", listProduct);
                 //string product = System.IO.File.ReadAllText(HttpContext.Current.Server.MapPath("SendEmailService/ProductTemplate.html"));

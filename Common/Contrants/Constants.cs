@@ -26,6 +26,8 @@ namespace Common
         public static readonly string CONF_KAFKA_GROUP_ID = "KAFKA_GROUP_ID";
         public static readonly string EMAIL_ADDRESS_HOST = "dangthuanvo1611@gmail.com";
         public static readonly string EMAIL_ADDRESS_PASS = "pwuebwfhtmnujdwt";
+        public static readonly string COMPANY_NAME = "VDT Company";
+        public static readonly string COMPANY_ADDRESS = "VDT@gmail.com.vn";
 
         public static ModuleBuilder MODULE_BUILDER = AppDomain.CurrentDomain.DefineDynamicAssembly(new AssemblyName("Dynamic Assembly"), AssemblyBuilderAccess.Run).DefineDynamicModule("MainModule");
     }
