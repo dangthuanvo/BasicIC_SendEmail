@@ -198,7 +198,8 @@
                                                         <td style="overflow-wrap:break-word;word-break:break-word;padding:25px 10px 20px;font-family:arial,helvetica,sans-serif;" align="left">
 
                                                             <div style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 140%; text-align: center;"><span style="color: #ecf0f1; font-size: 14px; line-height: 19.6px;"><span style="font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;">This email is to confirm your recent order. </span><span style="font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;"><strong>Order ID: {{order_id}}</strong></span></span></p>
+                                                                <p style="font-size: 14px; line-height: 140%; text-align: center;"><span style="color: #ecf0f1; font-size: 14px; line-height: 19.6px;"><span style="font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;">This email is to confirm your recent 
+                                                                                </span><span style="font-size: 16px; line-height: 22.4px; font-family: arial, helvetica, sans-serif;"><strong>Order ID: {{order_id}}</strong></span></span></p>
                                                             </div>
 
                                                         </td>
@@ -398,7 +399,7 @@
                                                         <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 21px 15px 10px;font-family:arial,helvetica,sans-serif;" align="left">
 
                                                             <div style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 140%; text-align: right;"><span style="font-size: 16px; line-height: 22.4px;">${{order.shipping.price}}</span></p>
+                                                                <p style="font-size: 14px; line-height: 140%; text-align: right;"><span style="font-size: 16px; line-height: 22.4px;">${{order_shipping_price}}</span></p>
                                                             </div>
 
                                                         </td>
@@ -461,7 +462,7 @@
                                                         <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 21px 10px 10px;font-family:arial,helvetica,sans-serif;" align="left">
 
                                                             <div style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
-                                                                <p style="font-size: 14px; line-height: 140%; text-align: right;"><span style="font-size: 16px; line-height: 22.4px;"><strong>${{order.total.price}}</strong></span></p>
+                                                                <p style="font-size: 14px; line-height: 140%; text-align: right;"><span style="font-size: 16px; line-height: 22.4px;"><strong>${{order_total_price}}</strong></span></p>
                                                             </div>
 
                                                         </td>
@@ -513,7 +514,7 @@
                                                     <tr>
                                                         <td style="overflow-wrap:break-word;word-break:break-word;padding:6px 10px 10px;font-family:arial,helvetica,sans-serif;" align="left">
 
-                                                            <h3 style="margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;">{{order.shipping_address}}</h3>
+                                                            <h3 style="margin: 0px; color: #000000; line-height: 140%; text-align: left; word-wrap: break-word; font-family: arial,helvetica,sans-serif; font-size: 15px; font-weight: 400;">{{order_shipping_address}}</h3>
 
                                                         </td>
                                                     </tr>
