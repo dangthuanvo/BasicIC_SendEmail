@@ -10,7 +10,7 @@ namespace BasicIC_SendEmail.Services.Implement
         protected readonly IConfigManager _config;
         protected readonly ILogger _logger;
         protected readonly IMapper _mapper;
-
+        protected BaseService() { }
         protected BaseService(IConfigManager config, ILogger logger, IMapper mapper)
         {
             _config = config;

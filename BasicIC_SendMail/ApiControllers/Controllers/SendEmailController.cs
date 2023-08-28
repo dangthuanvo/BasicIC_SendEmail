@@ -1,5 +1,6 @@
 ﻿using BasicIC_SendEmail.CustomAttributes;
 using BasicIC_SendEmail.Models.Kafka;
+using BasicIC_SendEmail.Models.Main;
 using BasicIC_SendEmail.Services.Interfaces;
 using Common.Commons;
 using Settings.Common;
@@ -9,7 +10,7 @@ using System.Web.Http;
 namespace BasicIC_SendEmail.ApiControllers.Controllers
 {
     //[Authorized]
-    [RoutePrefix("api/sendemail")]
+    [RoutePrefix("api/email")]
     public class SendEmailController : ApiController
     {
         private readonly ISendEmailService _sendEmailService;
@@ -19,12 +20,24 @@ namespace BasicIC_SendEmail.ApiControllers.Controllers
             _sendEmailService = sendEmailService;
         }
 
-        [Route("send-email")]
+        [Route("send-email-order-confirm")]
         [ValidateModel]
         [HttpPost]
-        public async Task<IHttpActionResult> GetAll(KafkaEmailModel param)
+        public async Task<IHttpActionResult> SendEmailOrderConfirm(KafkaEmailModel param)
         {
-            ResponseService<bool> response = await _sendEmailService.SendEmailAsync(param);
+            ResponseService<bool> response = await _sendEmailService.SendEmailOrderConfirm(param);
+            if (response.status)
+                return Ok(response);
+
+            return new ResponseFail<bool>().Error(response);
+        }
+
+        [Route("send-email-account-confirm")]
+        [ValidateModel]
+        [HttpPost]
+        public async Task<IHttpActionResult> SendEmailAccountConfirm(EmailModel param)
+        {
+            ResponseService<bool> response = await _sendEmailService.SendEmailAccountConfirm(param);
             if (response.status)
                 return Ok(response);
 

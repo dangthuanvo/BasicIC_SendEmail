@@ -45,7 +45,7 @@ namespace SocialConnection.KafkaComponents
                 case Topic.SEND_EMAIL:
                     _logger.LogInfo("Receive topic [send_email] with data: " + mess);
                     var emailData = JsonConvert.DeserializeObject<ResponseMessage<KafkaEmailModel>>(mess);
-                    await _sendEmailService.SendEmailAsync(emailData.data);
+                    await _sendEmailService.SendEmailOrderConfirm(emailData.data);
                     break;
             }
 

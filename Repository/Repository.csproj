@@ -57,95 +57,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomeModel\ListResult.cs" />
-    <Compile Include="EF\M03_Address.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Attribute.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Basic.Context.cs">
+    <Compile Include="EF\M02_Basic.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>M03_Basic.Context.tt</DependentUpon>
+      <DependentUpon>M02_Basic.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\M03_Basic.cs">
+    <Compile Include="EF\M02_Basic.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>M03_Basic.tt</DependentUpon>
+      <DependentUpon>M02_Basic.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\M03_Basic.Designer.cs">
+    <Compile Include="EF\M02_Basic.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>M03_Basic.edmx</DependentUpon>
+      <DependentUpon>M02_Basic.edmx</DependentUpon>
     </Compile>
-    <Compile Include="EF\M03_Cart.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
+    <Compile Include="EF\M02_CommonSetting.cs">
+      <DependentUpon>M02_Basic.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\M03_CartDetail.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
+    <Compile Include="EF\M02_DefaultCommonSetting.cs">
+      <DependentUpon>M02_Basic.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\M03_Coupon.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
+    <Compile Include="EF\M02_EmailSettings.cs">
+      <DependentUpon>M02_Basic.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\M03_CouponOrder.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Customer.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Employee.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Image.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Import.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_ImportDetail.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Menu.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Order.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_OrderDetail.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Product.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_ProductAttribute.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_ProductMenu.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Rating.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Role.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_RoleService.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_RoleServiceEmployee.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Service.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_Supplier.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_UserLog.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\M03_WishList.cs">
-      <DependentUpon>M03_Basic.tt</DependentUpon>
+    <Compile Include="EF\spCreateDefaultCommonSetting_Result.cs">
+      <DependentUpon>M02_Basic.tt</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\BasicICRepository.cs" />
     <Compile Include="Interfaces\IRepositorySql.cs" />
@@ -156,12 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="EF\M03_Basic.edmx">
+    <EntityDeploy Include="EF\M02_Basic.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>M03_Basic.Designer.cs</LastGenOutput>
+      <LastGenOutput>M02_Basic.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EF\M03_Basic.edmx.diagram">
-      <DependentUpon>M03_Basic.edmx</DependentUpon>
+    <None Include="EF\M02_Basic.edmx.diagram">
+      <DependentUpon>M02_Basic.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -175,15 +112,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EF\M03_Basic.Context.tt">
+    <Content Include="EF\M02_Basic.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>M03_Basic.edmx</DependentUpon>
-      <LastGenOutput>M03_Basic.Context.cs</LastGenOutput>
+      <DependentUpon>M02_Basic.edmx</DependentUpon>
+      <LastGenOutput>M02_Basic.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="EF\M03_Basic.tt">
+    <Content Include="EF\M02_Basic.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>M03_Basic.edmx</DependentUpon>
-      <LastGenOutput>M03_Basic.cs</LastGenOutput>
+      <DependentUpon>M02_Basic.edmx</DependentUpon>
+      <LastGenOutput>M02_Basic.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

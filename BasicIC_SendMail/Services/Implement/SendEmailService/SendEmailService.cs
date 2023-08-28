@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using BasicIC_SendEmail.Common;
 using BasicIC_SendEmail.Interfaces;
 using BasicIC_SendEmail.Models.Kafka;
+using BasicIC_SendEmail.Models.Main;
 using BasicIC_SendEmail.Services.Interfaces;
 using Common;
 using Common.Commons;
@@ -18,7 +20,40 @@ namespace BasicIC_SendEmail.Services.Implement
         {
 
         }
-        public async Task<ResponseService<bool>> SendEmailAsync(KafkaEmailModel emailContent)
+
+        public async Task<ResponseService<bool>> SendEmailAccountConfirm(EmailModel param)
+        {
+            try
+            {
+                string smtpServer = CommonFunc.GetValueDefaultCommonSettingFromMemory("smtpServer");
+                int smtpPort = 587;
+                string smtpUsername = Constants.EMAIL_ADDRESS_HOST;
+                string smtpPassword = Constants.EMAIL_ADDRESS_PASS;
+                using (var client = new SmtpClient(smtpServer, smtpPort))
+                {
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
+                    client.EnableSsl = true;
+                    var message = new MailMessage();
+                    message.From = new MailAddress(smtpUsername);
+                    message.To.Add(param.toEmail);
+                    message.Subject = param.toEmail;
+                    message.Body = param.toEmail;
+                    message.IsBodyHtml = true;
+                    await client.SendMailAsync(message);
+                }
+
+                return new ResponseService<bool>(true);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex);
+                return new ResponseService<bool>(ex.Message).BadRequest(ErrorCodes.UNHANDLED_ERROR);
+            }
+
+        }
+
+        public async Task<ResponseService<bool>> SendEmailOrderConfirm(KafkaEmailModel emailContent)
         {
             try
             {

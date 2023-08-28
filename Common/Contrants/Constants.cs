@@ -28,6 +28,8 @@ namespace Common
         public static readonly string EMAIL_ADDRESS_PASS = "pwuebwfhtmnujdwt";
         public static readonly string COMPANY_NAME = "VDT Company";
         public static readonly string COMPANY_ADDRESS = "VDT@gmail.com.vn";
+        public static readonly string CONF_HOST_FABIO_SERVICE = "HOST_FABIO_SERVICE";
+        public static readonly string SOURCE_FABIO_SETTING = "settings";
 
         public static ModuleBuilder MODULE_BUILDER = AppDomain.CurrentDomain.DefineDynamicAssembly(new AssemblyName("Dynamic Assembly"), AssemblyBuilderAccess.Run).DefineDynamicModule("MainModule");
     }

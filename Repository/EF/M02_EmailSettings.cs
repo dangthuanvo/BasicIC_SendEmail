@@ -12,18 +12,18 @@ namespace Repository.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class M03_CouponOrder
+    public partial class M02_EmailSettings
     {
         public System.Guid id { get; set; }
-        public Nullable<System.Guid> coupon_id { get; set; }
-        public Nullable<System.Guid> order_id { get; set; }
+        public string address { get; set; }
+        public string pass { get; set; }
+        public string smtp_host { get; set; }
+        public Nullable<int> smtp_port { get; set; }
+        public Nullable<bool> enable_ssl { get; set; }
         public Nullable<System.DateTime> create_time { get; set; }
         public string create_by { get; set; }
         public Nullable<System.DateTime> modify_time { get; set; }
         public string modify_by { get; set; }
         public Nullable<System.Guid> tenant_id { get; set; }
-    
-        public virtual M03_Coupon M03_Coupon { get; set; }
-        public virtual M03_Order M03_Order { get; set; }
     }
 }

@@ -12,18 +12,12 @@ namespace Repository.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class M03_Image
+    public partial class M02_DefaultCommonSetting
     {
         public System.Guid id { get; set; }
-        public Nullable<System.Guid> product_id { get; set; }
-        public string image_url { get; set; }
-        public Nullable<int> display_order { get; set; }
-        public Nullable<System.DateTime> create_time { get; set; }
-        public string create_by { get; set; }
-        public Nullable<System.DateTime> modify_time { get; set; }
-        public string modify_by { get; set; }
-        public Nullable<System.Guid> tenant_id { get; set; }
-    
-        public virtual M03_Product M03_Product { get; set; }
+        public string key { get; set; }
+        public string value { get; set; }
+        public string common_type { get; set; }
+        public string setting_for { get; set; }
     }
 }

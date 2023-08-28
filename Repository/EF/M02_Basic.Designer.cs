@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Intern Basebs\IC\BasicIC_SendEmail\Repository\EF\M03_Basic.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Intern Basebs\IC\BasicIC_SendMail\Repository\EF\M02_Basic.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

@@ -22,7 +22,7 @@ namespace BasicIC_SendEmail.App_Start
     public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
-        private static IKernel kernel;
+        public static IKernel kernel;
 
         /// <summary>
         /// Starts the application.

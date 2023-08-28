@@ -24,6 +24,7 @@ namespace BasicIC_SendEmail.Config
             CreateMap<TimeSpan?, DateTime?>().ConvertUsing(new TimeSpanToDateTimeConverter());
 
             // Add as many of these lines as you need to map your objects
+            //CreateMap<DefaultCommonSettingModel, M02_DefaultCommonSetting>().ReverseMap();
         }
 
         public class DateTimeToTimeSpanConverter : ITypeConverter<DateTime?, TimeSpan?>
