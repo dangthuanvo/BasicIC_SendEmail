@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using BasicIC_SendEmail.Common;
 using BasicIC_SendEmail.Interfaces;
 using BasicIC_SendEmail.Models.Kafka;
 using BasicIC_SendEmail.Models.Main;
+using BasicIC_SendEmail.RestAPI;
 using BasicIC_SendEmail.Services.Interfaces;
 using Common;
 using Common.Commons;
@@ -23,22 +23,34 @@ namespace BasicIC_SendEmail.Services.Implement
 
         public async Task<ResponseService<bool>> SendEmailAccountConfirm(EmailModel param)
         {
+
             try
             {
-                string smtpServer = CommonFunc.GetValueDefaultCommonSettingFromMemory("smtpServer");
-                int smtpPort = 587;
-                string smtpUsername = Constants.EMAIL_ADDRESS_HOST;
-                string smtpPassword = Constants.EMAIL_ADDRESS_PASS;
+                //RestfulApi restfulApi = new RestfulApi().ToFabio(Constants.SOURCE_FABIO_SETTING, "");
+                //PagingParam pagingParam = new PagingParam();
+                //var _response = await restfulApi.client.PostAsJsonAsync(Constants.PATH_PRE_API_SETTING, pagingParam);
+                //var result = _response.Content.ReadAsAsync<ResponseService<ListResult<M02_DefaultCommonSetting>>>();
+
+                DefaultCommonSettingAPI defaultCommonSettingAPI = new DefaultCommonSettingAPI();
+                string smtpServer = (await defaultCommonSettingAPI.GetByKey("smtpServer"));
+                int smtpPort = int.Parse((await defaultCommonSettingAPI.GetByKey("smtpPort")));
+                string smtpUsername = (await defaultCommonSettingAPI.GetByKey("smtpUsername"));
+                string smtpPassword = (await defaultCommonSettingAPI.GetByKey("smtpPassword"));
                 using (var client = new SmtpClient(smtpServer, smtpPort))
                 {
                     client.UseDefaultCredentials = false;
                     client.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
-                    client.EnableSsl = true;
+                    if (int.Parse((await defaultCommonSettingAPI.GetByKey("enableSsl"))) == 1)
+                    {
+                        client.EnableSsl = true;
+                    }
+                    else
+                        client.EnableSsl = false;
                     var message = new MailMessage();
                     message.From = new MailAddress(smtpUsername);
                     message.To.Add(param.toEmail);
-                    message.Subject = param.toEmail;
-                    message.Body = param.toEmail;
+                    message.Subject = param.subject;
+                    message.Body = param.body;
                     message.IsBodyHtml = true;
                     await client.SendMailAsync(message);
                 }

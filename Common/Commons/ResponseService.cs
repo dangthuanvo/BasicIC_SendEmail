@@ -78,6 +78,15 @@ namespace Common.Commons
             this.data = data;
         }
 
+        public ResponseService<T> BadRequest(string message, int errorCode = -1)
+        {
+            _logger.LogError(this.message);
+            this.status_code = HttpStatusCode.BadRequest;
+            this.status = false;
+            this.error_code = errorCode != -1 ? errorCode : this.error_code;
+            return this;
+        }
+
         public ResponseService<T> BadRequest(int errorCode = -1)
         {
             _logger.LogError(this.message);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Common.Params.Base
 {
@@ -11,5 +12,9 @@ namespace Common.Params.Base
     {
         public Object data { get; set; }
         public string topic { get; set; }
+    }
+    public class TopicSubscribe
+    {
+        public List<string> list_topic { get; set; }
     }
 }

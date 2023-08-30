@@ -245,6 +245,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\Controllers\BaseController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
@@ -252,6 +253,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebAPIConfig.cs" />
     <Compile Include="Common\CommonFunc.cs" />
+    <Compile Include="Common\ConsultClient.cs" />
     <Compile Include="Common\InternalServiceException.cs" />
     <Compile Include="Common\RequestAPI.cs" />
     <Compile Include="Common\ResponseFail.cs" />
@@ -275,7 +277,7 @@
     <Compile Include="Models\Main\ConsumerResultData.cs" />
     <Compile Include="Models\Main\EmailModel.cs" />
     <Compile Include="KafkaComponents\ProducerWrapper.cs" />
-    <Compile Include="Models\Main\Log\LogModel.cs" />
+    <Compile Include="Models\Main\Logging\LogModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestAPI\DefaultCommonSettingAPI.cs" />
     <Compile Include="Services\Implement\BaseService.cs" />
@@ -365,7 +367,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51758</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44333/</IISUrl>
+          <IISUrl>http://localhost:44333/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

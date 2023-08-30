@@ -29,8 +29,17 @@ namespace Common
         public static readonly string COMPANY_NAME = "VDT Company";
         public static readonly string COMPANY_ADDRESS = "VDT@gmail.com.vn";
         public static readonly string CONF_HOST_FABIO_SERVICE = "HOST_FABIO_SERVICE";
-        public static readonly string SOURCE_FABIO_SETTING = "settings";
+        public static readonly string SOURCE_FABIO_SETTING = "setting";
 
+        public static readonly string CONF_ADDRESS_SERVICE = "ADDRESS_SERVICE";
+        public static readonly string CONF_PORT_SERVICE = "PORT_SERVICE";
+        public static readonly string CONF_HEALTH_CHECK_SERVICE = "HEALTH_CHECK_SERVICE";
+        public static readonly string CONF_PROTOCOL_SERVICE = "PROTOCOL_SERVICE";
+        public static readonly string CONF_SOURCE_FABIO_SERVICE = "SOURCE_FABIO_SERVICE";
+        public static readonly string STATE_SOURCE_PRODUCTION = "production";
+        public static readonly string CONF_ADDRESS_DISCOVERY_SERVICE = "ADDRESS_DISCOVERY_SERVICE";
+        public static readonly string SERVICE_CONSULT_GOOD_HEALTH = "passing";
+        public static readonly string PATH_PRE_API_SETTING = "default-common-setting/get-all";
         public static ModuleBuilder MODULE_BUILDER = AppDomain.CurrentDomain.DefineDynamicAssembly(new AssemblyName("Dynamic Assembly"), AssemblyBuilderAccess.Run).DefineDynamicModule("MainModule");
     }
 }
